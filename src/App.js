@@ -10,6 +10,7 @@ export default function App() {
   const count = useSelector((state) => state.count);
   // const username = useSelector((state) => state.username);
   const state = useSelector(state => state)
+  const boxes = useSelector(state => state.boxes)
 
   const increment = () => {
     dispatch({ type: "INCREMENT" })
@@ -40,13 +41,13 @@ export default function App() {
       <button onClick={() => reset()} className="buttons">Reset</button>
       <input onChange={(e) => changeColor(e)} className="color-input" placeholder="tell me your favorite color"></input>
 
-{/* 여기부터 */}
+      {/* 여기부터 */}
       {/* {Array(count).fill(<Box />)} */}
 
       {state.boxes.length > 0 && state.boxes.map(box => {
         return <Box colorBoxes={box.colorBoxes} id={box.id} colorBox={box.colorBox} colorText={box.colorText} />
       })}
-{/* 여기까지 */}
+      {/* 여기까지 */}
 
     </div>
   );

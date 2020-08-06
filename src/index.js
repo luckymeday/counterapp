@@ -43,6 +43,7 @@ function reducer(state = initialState, action) {
 
     case "RESET":
       state.count = 0;
+      state.boxes = [];
       break;
 
     case 'CHANGE_COLOR':
