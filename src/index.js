@@ -54,8 +54,10 @@ function reducer(state = initialState, action) {
     case 'CHANGE_ONE_BOX':
       // const boxColors = state.boxColor
       // boxColors[action.payload.index] = action.payload
-      state.boxColor[action.payload.index] = action.payload
-      state.color = action.payload;
+      console.log('action.payload:', action.payload)
+      console.log('state.boxes:', state.boxes)
+      state.boxes[action.payload.id].colorBox = action.payload.color;
+      // state.color = action.payload.color;
       break;
 
   }
